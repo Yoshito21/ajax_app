@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.order(id: "DESC")
+    redirect_to action: :index
   end
 
   def new
